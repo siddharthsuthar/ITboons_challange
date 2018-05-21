@@ -11,7 +11,7 @@ class HomePage extends Component {
 
     state = {
         isLoggedIn: false,
-        message: "Welcome to DropBox",
+        message: "Welcome to ITboons Challenge",
         username: '',
         check:"SignIn",
         dashboard:false
