@@ -1,0 +1,326 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.fileupload{
+  left: 38%;
+  right: 38%;
+  margin: 20px !important;
+}
+
+.centered{
+  align-content: center;
+}
+
+/*
+/* Created by Filipe Pina
+ * Specific styles of signin, register, component
+ */
+/*
+ * General styles
+ */
+
+
+@import url(http://fonts.googleapis.com/css?family=Lato);
+
+.container
+{
+    width:800px;
+    overflow:hidden;
+    display:inline-block;
+}
+.side-bar
+{
+    background:#1E90FF;
+    position:absolute;
+    height:100%;
+    width:200px;
+    color:#fff;
+    transition: margin-left 0.5s;
+}
+
+.side-bar ul
+{
+    list-style:none;
+    padding:0px;
+    
+}
+
+.side-bar ul li.menu-head
+{
+    font-family: 'Lato', sans-serif;
+    padding:20px;
+}
+
+
+.side-bar ul li.menu-head a
+{
+    color:#fff;
+    text-decoration:none;
+    height:50px;
+}
+
+
+.side-bar ul .menu-head  a
+{
+    color:#fff;
+    text-decoration:none;
+    height:50px;
+}
+
+.side-bar ul .menu li  a 
+{
+    color:#fff;
+    text-decoration:none;
+    display:inline-table;
+    width:100%;
+    padding-left:20px;
+    padding-right:20px;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+.side-bar ul .menu li  a:hover
+{
+    border-left:3px solid #ECECEA;    
+    padding-left:17px;
+}
+
+.side-bar ul .menu li  a.active
+{
+    padding-left:17px;
+    background:#D9853B;
+    border-left:3px solid #ECECEA;
+}
+
+.side-bar ul .menu li  a.active:before {
+   content:"";
+   position: absolute;
+   width: 0;
+   height: 0;
+   border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+  
+  border-left: 7px solid #D9853B;
+    margin-top: -10px;
+    margin-left: 180px;
+}
+
+
+.content
+{
+    padding-left: 200px;
+    transition: padding-left 0.5s;
+}
+
+.active > .side-bar
+{
+    margin-left:-150px;   
+    transition: margin-left 0.5s;
+}
+
+.active > .content
+{
+    padding-left:50px;
+    transition: padding-left 0.5s;
+}
+
+
+@import 'https://fonts.googleapis.com/css?family=Noto+Sans'
+
+// Font variables
+$main-font: 'Noto Sans', sans-serif
+
+// Color variables
+$darkblue: rgba(40, 75, 99, 0.8)
+$fadedwhite: rgba(255,255,255,.7)
+$accentcolor: #58a4b0
+$fbcolor: #3A5A98
+$twcolor: #55ACEE
+
+body
+  background: radial-gradient(ellipse farthest-corner at center top, #d8dbe2 0%, #a9bcd0 100%)
+  height: 100vh
+  font-family: $main-font
+  background: url('https://hd.unsplash.com/photo-1435777940218-be0b632d06db') no-repeat center center fixed
+  
+// App style  
+.Modal
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  background: $darkblue
+  background-size: cover
+  border-radius: 5px
+  // Lost password style
+  & a
+    display: block
+    color: $fadedwhite
+    font-size: 12px
+    text-align: center
+    text-decoration: none
+    margin: 4px 0 10px 0
+    margin: 10px
+    &:hover
+      text-decoration: underline
+
+// Input  
+.Input
+  display: flex
+  // Hack to be able to have a label pseudo element before the input field
+  flex-direction: row-reverse
+  
+  align-items: center
+  border-bottom: 1px solid #58a4b0
+  margin: 0 20px
+  & input
+    border: 0
+    background: transparent
+    padding: 2px 10px
+    margin: 18px 4px 0 4px
+    color: $fadedwhite
+    font-family: $main-font
+    font-size: 14px
+    
+    &:required
+      box-shadow: none
+    
+    // Animation trigger for label::before
+    &:focus ~ label
+      opacity: 1
+    
+    // label::before icons
+    &[type='text']
+      ~ label
+        &::before
+          content: "\f007"
+    &[type='password']
+      ~ label
+        &::before
+          content: "\f023"
+      
+// Label
+label
+  font-family: FontAwesome
+  color: white
+  font-size: 14px
+  margin-top: 17px
+  transition: opacity .3s ease-in-out
+  // pseudo element before input field (see hack above)
+  &::before
+    padding: 5px 5px 0 0
+    opacity: 0.5
+
+// Buttons
+
+// Sign in button
+form 
+  & button
+    position: relative
+    margin: 15px 0 5px 0
+    left: 50%
+    transform: translateX(-50%)
+    background: $accentcolor
+    border: none
+    border-radius: 5px
+    padding: 10px
+    color: white
+    width: 85%
+    font-family: $main-font
+    font-size: 14px
+    cursor: pointer
+    
+// Social login buttons    
+.social-signin
+  text-align: center
+  & button
+    width: 40%
+    border: none
+    border-radius: 5px
+    cursor: pointer
+    padding: 10px
+    & i
+      font-size: 20px
+      color: white
+    &.fb
+      background: $fbcolor
+      margin-right: 13px
+    &.tw
+      background: $twcolor
+// modal back button
+.bringitback
+  position: absolute
+  left: 50%
+  top: 50%
+  transform: translateX(-50%)
+  background: $accentcolor
+  border: none
+  border-radius: 5px
+  padding: 10px
+  color: white
+  width: 200px
+  font-family: $main-font
+  font-size: 14px
+  cursor: pointer 
+
+// Fake logo
+.logo
+  text-align: center
+  color: white
+  & i
+    display: block
+    padding: 20px 0 0 0 
+    font-size: 70px
+    transform: translateX(-5px)
+  & span
+    color: $fadedwhite
+    text-transform: uppercase
+    
+
+// React CSS animations
+
+// On enter
+.animation-enter
+  opacity: .01
+  
+  &.animation-enter-active
+    opacity: 1
+    transition: opacity .6s ease, margin .5s ease
+  
+// On leave
+.animation-leave
+  margin-top: 0px
+  opacity: 1
+  &.animation-leave-active
+    margin-top: -30px
+    opacity: .01
+    transition: opacity .2s ease
+
+// On mount
+.animation-appear
+  opacity: 0.01
+.animation-appear.animation-appear-active 
+  opacity: 1
+  transition: opacity .5s ease-in
